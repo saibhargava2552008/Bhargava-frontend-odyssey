@@ -1,0 +1,93 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    overflow-x: hidden;
+}
+
+/* 1. Custom Loading Animation (Requirement #4) [cite: 23] */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #334155;
+    border-top: 5px solid #38bdf8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 5 Sections Story Structure (Requirement #1) [cite: 20] */
+section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+h1 { font-size: 4rem; color: #38bdf8; margin-bottom: 1rem; }
+h2 { font-size: 3rem; color: #fbbf24; margin-bottom: 1rem; }
+p { font-size: 1.2rem; line-height: 1.6; color: #94a3b8; }
+
+/* Interactive Elements (Requirement #3) [cite: 22] */
+.card {
+    background: #1e293b;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+#bug-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* Responsive Design (Requirement #5) [cite: 24] */
+@media screen and (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    p { font-size: 1rem; }
+}
